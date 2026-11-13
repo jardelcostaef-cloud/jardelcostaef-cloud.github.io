@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JN Smartphone | Aqui realizamos sonhos</title>
+<meta name="description" content="JN Smartphone: especialista em produtos Apple. iPhone, iPad, Apple Watch, Xiaomi e mais, novos e seminovos com 6 meses de garantia. Cartão em até 21x. Enviamos para todo o Brasil.">
+<meta property="og:title" content="JN Smartphone | Aqui realizamos sonhos">
+<meta property="og:description" content="JN Smartphone: especialista em produtos Apple. iPhone, iPad, Apple Watch, Xiaomi e mais, novos e seminovos com 6 meses de garantia. Cartão em até 21x. Enviamos para todo o Brasil.">
+<meta property="og:image" content="assets/logo-jn.jpg">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#0B0B0C">
+<link rel="icon" href="assets/logo-jn.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F5F5F4}
+html{scroll-behavior:smooth}
+a{color:#8A6A1F}a:hover{color:#5E4712}
+
+/* tons de fundo das fotos (a foto branca se funde ao tom) */
+.jn-t-gold{background:#F3EBD8}.jn-t-red{background:#FBE1DE}.jn-t-rose{background:#F7E3EA}
+.jn-t-steel{background:#E3E8EE}.jn-t-violet{background:#E9E4F7}.jn-t-sky{background:#DFEEF7}.jn-t-sand{background:#EFEAE2}
+.jn-blend{mix-blend-mode:multiply}
+
+/* movimento */
+@keyframes jnFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes jnFloatSm{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-8px) rotate(2deg)}}
+@keyframes jnMarquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes jnUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes jnPulse{0%{box-shadow:0 0 0 0 rgba(201,162,74,.55)}100%{box-shadow:0 0 0 18px rgba(201,162,74,0)}}
+@keyframes jnShine{0%{transform:translateX(-120%) skewX(-20deg)}60%,100%{transform:translateX(320%) skewX(-20deg)}}
+
+.jn-float{animation:jnFloat 5s ease-in-out infinite}
+.jn-chip{animation:jnFloatSm 6s ease-in-out infinite}
+.jn-chip2{animation:jnFloatSm 7s ease-in-out -2s infinite}
+.jn-marquee{display:flex;width:max-content;animation:jnMarquee 28s linear infinite}
+.jn-pulse{animation:jnPulse 1.8s ease-out infinite}
+.jn-cta{position:relative;overflow:hidden}
+.jn-cta::after{content:"";position:absolute;top:0;bottom:0;left:0;width:30%;background:rgba(255,255,255,.45);animation:jnShine 3.5s ease-in-out infinite}
+@supports (animation-timeline: view()){
+.jn-reveal{animation:jnUp linear both;animation-timeline:view();animation-range:entry 0% entry 45%}
+}
+
+/* carrossel do topo */
+.jn-slide{position:absolute;inset:0;opacity:0;transform:scale(.94) translateX(24px);transition:opacity .7s ease,transform .7s ease;pointer-events:none}
+.jn-slide.is-on{opacity:1;transform:none;pointer-events:auto}
+.jn-dot{width:44px;height:44px;border:0;background:none;padding:0;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.jn-dot span{display:block;width:10px;height:10px;border-radius:999px;background:#5A5A5E;transition:all .3s ease}
+.jn-dot.is-on span{width:30px;background:#C9A24A}
+
+/* cards */
+.jn-card{transition:transform .3s ease,box-shadow .3s ease}
+.jn-card:hover{transform:translateY(-8px);box-shadow:0 22px 44px rgba(0,0,0,.14)}
+.jn-zoom{overflow:hidden}
+.jn-zoom img{transition:transform .5s ease}
+.jn-card:hover .jn-zoom img,.jn-tile:hover img{transform:scale(1.08) rotate(-2deg)}
+.jn-tile{transition:transform .3s ease}
+.jn-tile:hover{transform:translateY(-6px)}
+.jn-tile img{transition:transform .5s ease}
+.jn-nav{display:flex;gap:4px 28px;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.jn-nav::-webkit-scrollbar{display:none}
+.jn-nav a{position:relative}
+.jn-nav a::after{content:"";position:absolute;left:0;right:100%;bottom:6px;height:2px;background:#C9A24A;transition:right .25s ease}
+.jn-nav a:hover::after{right:0}
+
+.jn-hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:center}
+.jn-banners{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px}
+.jn-prods{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.jn-cats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.jn-wa-text{display:inline}
+
+/* tablet */
+@media (max-width:980px){
+.jn-hero-grid{grid-template-columns:minmax(0,1fr);gap:36px}
+.jn-banners{grid-template-columns:minmax(0,1fr)}
+.jn-cats{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+/* celular */
+@media (max-width:640px){
+.jn-wrap{padding-left:16px !important;padding-right:16px !important}
+.jn-head{gap:12px !important;padding-top:12px !important;padding-bottom:12px !important}
+.jn-search{order:3;flex-basis:100% !important}
+.jn-brand-sub{display:none}
+.jn-wa-text{display:none}
+.jn-wa-btn{margin-left:auto;padding:0 !important;width:46px;justify-content:center}
+.jn-hero{padding-top:32px !important;padding-bottom:64px !important}
+.jn-hero-btns a{flex:1 1 100%;justify-content:center}
+.jn-cats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.jn-prods{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -16px;padding:4px 16px 16px;scrollbar-width:none}
+.jn-prods::-webkit-scrollbar{display:none}
+.jn-prods>article{flex:0 0 78%;scroll-snap-align:center}
+.jn-prods>article:only-child{flex-basis:100%}
+.jn-sec{padding-top:36px !important}
+.jn-h2{font-size:22px !important}
+.jn-semi{padding:32px 22px !important;border-radius:22px !important}
+.jn-semi h2{font-size:26px !important}
+.jn-semi a{width:100%;justify-content:center;box-sizing:border-box}
+.jn-banner{min-height:0 !important;padding:24px !important}
+.jn-about{padding-top:48px !important;padding-bottom:48px !important}
+.jn-chip,.jn-chip2{font-size:12px !important;padding:8px 12px !important}
+.jn-fab{right:14px !important;bottom:14px !important}
+}
+@media (prefers-reduced-motion:reduce){
+.jn-float,.jn-chip,.jn-chip2,.jn-marquee,.jn-pulse,.jn-cta::after,.jn-reveal{animation:none !important}
+.jn-slide,.jn-card,.jn-tile,.jn-zoom img,.jn-tile img{transition:none !important}
+html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div style="font-family: Inter, system-ui, sans-serif; color: #141414; background: #F5F5F4; min-height: 100vh; overflow-x: hidden">
+
+<div style="background: #C9A24A; color: #141414; text-align: center; font-size: 13px; font-weight: 600; padding: 9px 16px; letter-spacing: .02em">Enviamos para todo o Brasil · Cartão em até 21x · Pix · Dinheiro</div>
+
+<header style="background: #0B0B0C; color: #FFFFFF">
+<div class="jn-wrap jn-head" style="max-width: 1240px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px">
+<a href="#inicio" style="display: flex; align-items: center; gap: 12px; text-decoration: none; color: #FFFFFF">
+<img src="assets/logo-jn.jpg" alt="JN Smartphone" style="width: 52px; height: 52px; border-radius: 10px; object-fit: cover">
+<span style="display: flex; flex-direction: column; line-height: 1.1">
+<span style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 19px; letter-spacing: .02em">JN SMARTPHONE</span>
+<span class="jn-brand-sub" style="font-size: 12px; color: #D9BE7A">Conectamos você ao melhor da tecnologia</span>
+</span>
+</a>
+<form class="jn-search" style="flex: 1 1 280px; display: flex; min-width: 0" id="jn-busca-form">
+<label for="busca" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Buscar produtos</label>
+<input id="busca" type="search" placeholder="O que você procura?" style="flex: 1; min-width: 0; height: 46px; border: 0; border-radius: 10px 0 0 10px; padding: 0 16px; font: inherit; font-size: 16px">
+<button type="submit" aria-label="Buscar" style="width: 52px; height: 46px; border: 0; border-radius: 0 10px 10px 0; background: #C9A24A; color: #141414; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+</button>
+</form>
+<a class="jn-wa-btn" href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." aria-label="Fale com a gente no WhatsApp" style="display: flex; align-items: center; gap: 8px; height: 46px; padding: 0 18px; border-radius: 10px; border: 1px solid #C9A24A; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 14px; box-sizing: border-box">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+<span class="jn-wa-text">Fale com a gente</span>
+</a>
+</div>
+<nav aria-label="Categorias" style="border-top: 1px solid #222224">
+<div class="jn-wrap jn-nav" style="max-width: 1240px; margin: 0 auto; padding: 0 24px; font-size: 14px; font-weight: 500">
+<a href="#iphone" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">iPhone</a>
+<a href="#apple" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">iPad e Apple Watch</a>
+<a href="#xiaomi" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">Xiaomi e POCO</a>
+<a href="#seminovos" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">Seminovos</a>
+<a href="#acessorios" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">Som e Acessórios</a>
+<a href="#perfumes" style="color: #FFFFFF; text-decoration: none; padding: 14px 0">Perfumes</a>
+<a href="#loja" style="color: #D9BE7A; text-decoration: none; padding: 14px 0">Nossa loja</a>
+</div>
+</nav>
+</header>
+
+<section id="inicio" style="background: #0B0B0C; color: #FFFFFF">
+<div class="jn-wrap jn-hero jn-hero-grid" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 88px">
+<div style="display: flex; flex-direction: column; gap: 20px">
+<span style="align-self: flex-start; font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #C9A24A; border: 1px solid #5E4712; border-radius: 999px; padding: 6px 14px">Especialista em produtos Apple</span>
+<h1 style="margin: 0; font-family: Montserrat, sans-serif; font-weight: 800; font-size: clamp(38px, 5.4vw, 66px); line-height: 1.02; letter-spacing: -.02em">Aqui realizamos <span style="color: #C9A24A">sonhos.</span></h1>
+<p style="margin: 0; font-size: 18px; line-height: 1.6; color: #CFCFCF; max-width: 520px">iPhone, iPad, Apple Watch, Xiaomi e muito mais. Aparelhos novos e seminovos, direto de Queimadas de Jurema-PE para qualquer lugar do Brasil.</p>
+<div class="jn-hero-btns" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+<a class="jn-cta" href="#iphone" style="display: inline-flex; align-items: center; height: 54px; padding: 0 30px; border-radius: 12px; background: #C9A24A; color: #141414; font-weight: 700; text-decoration: none; box-sizing: border-box">Ver produtos</a>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." style="display: inline-flex; align-items: center; height: 54px; padding: 0 30px; border-radius: 12px; border: 1px solid #FFFFFF; color: #FFFFFF; font-weight: 600; text-decoration: none; box-sizing: border-box">Pedir orçamento no WhatsApp</a>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 10px; font-size: 14px; color: #D9BE7A; font-weight: 500">
+<span>Até 21x no cartão</span><span>6 meses de garantia nos seminovos</span><span>Envio para todo o Brasil</span>
+</div>
+</div>
+
+<div style="position: relative">
+<div style="position: relative; width: 100%; aspect-ratio: 1 / 1.02; max-width: 540px; margin: 0 auto">
+
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20iPhone%20Duo.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" class="jn-slide is-on jn-t-gold" style="border-radius: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 28px; box-sizing: border-box; text-decoration: none; color: #141414">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #6B4F12">Lançamento Apple</span>
+<img class="jn-float jn-blend" src="assets/iphone-duo.jpg" alt="iPhone Duo" style="width: 78%; aspect-ratio: 1; object-fit: contain">
+<span style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: clamp(20px, 2.6vw, 28px); text-align: center">iPhone Duo</span>
+<span style="font-size: 14px; color: #3F3F3F; font-weight: 500">Toque para consultar no WhatsApp</span>
+</a>
+
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20Apple%20Watch%20Series%2011.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" class="jn-slide  jn-t-rose" style="border-radius: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 28px; box-sizing: border-box; text-decoration: none; color: #141414">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #6B4F12">Novo</span>
+<img class="jn-float jn-blend" src="assets/apple-watch-11.jpg" alt="Apple Watch Series 11" style="width: 78%; aspect-ratio: 1; object-fit: contain">
+<span style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: clamp(20px, 2.6vw, 28px); text-align: center">Apple Watch Series 11</span>
+<span style="font-size: 14px; color: #3F3F3F; font-weight: 500">Toque para consultar no WhatsApp</span>
+</a>
+
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20Xiaomi%2018%20Pro%20Max.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" class="jn-slide  jn-t-red" style="border-radius: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 28px; box-sizing: border-box; text-decoration: none; color: #141414">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #6B4F12">Top de linha</span>
+<img class="jn-float jn-blend" src="assets/xiaomi-18-pro-max.jpg" alt="Xiaomi 18 Pro Max" style="width: 78%; aspect-ratio: 1; object-fit: contain">
+<span style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: clamp(20px, 2.6vw, 28px); text-align: center">Xiaomi 18 Pro Max</span>
+<span style="font-size: 14px; color: #3F3F3F; font-weight: 500">Toque para consultar no WhatsApp</span>
+</a>
+
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20Xiaomi%20Pad%207%20Pro.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" class="jn-slide  jn-t-violet" style="border-radius: 32px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; padding: 28px; box-sizing: border-box; text-decoration: none; color: #141414">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #6B4F12">Tablet</span>
+<img class="jn-float jn-blend" src="assets/xiaomi-pad-7-pro.jpg" alt="Xiaomi Pad 7 Pro" style="width: 78%; aspect-ratio: 1; object-fit: contain">
+<span style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: clamp(20px, 2.6vw, 28px); text-align: center">Xiaomi Pad 7 Pro</span>
+<span style="font-size: 14px; color: #3F3F3F; font-weight: 500">Toque para consultar no WhatsApp</span>
+</a>
+
+<span class="jn-chip" style="position: absolute; top: 7%; left: -3%; background: #0B0B0C; color: #FFFFFF; border: 1px solid #C9A24A; border-radius: 999px; padding: 10px 16px; font-size: 14px; font-weight: 700; box-shadow: 0 10px 24px rgba(0,0,0,.3)">Em até <span style="color: #E6CD8A">21x</span></span>
+<span class="jn-chip2" style="position: absolute; bottom: 20%; right: -3%; background: #C9A24A; color: #141414; border-radius: 999px; padding: 10px 16px; font-size: 14px; font-weight: 700; box-shadow: 0 10px 24px rgba(0,0,0,.3)">Envio para todo o Brasil</span>
+</div>
+<div role="group" aria-label="Destaques" style="display: flex; justify-content: center; margin-top: 10px">
+
+<button type="button" class="jn-dot is-on" aria-label="Mostrar iPhone Duo"><span></span></button>
+
+<button type="button" class="jn-dot " aria-label="Mostrar Apple Watch Series 11"><span></span></button>
+
+<button type="button" class="jn-dot " aria-label="Mostrar Xiaomi 18 Pro Max"><span></span></button>
+
+<button type="button" class="jn-dot " aria-label="Mostrar Xiaomi Pad 7 Pro"><span></span></button>
+
+</div>
+</div>
+</div>
+</section>
+
+<div aria-hidden="true" style="background: #141414; color: #E6CD8A; overflow: hidden; border-top: 1px solid #2A2A2D; border-bottom: 1px solid #2A2A2D">
+<div class="jn-marquee" style="font-family: Montserrat, sans-serif; font-weight: 700; font-size: 15px; letter-spacing: .16em; text-transform: uppercase; padding: 14px 0">
+
+<span style="padding: 0 22px; white-space: nowrap">iPhone</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">iPad</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">Apple Watch</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">Xiaomi</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">POCO</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">JBL</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">Perfumes</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">Seminovos com garantia</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">iPhone</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">iPad</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">Apple Watch</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">Xiaomi</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">POCO</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">JBL</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">Perfumes</span><span style="color: #6B6B6B">✦</span>
+
+<span style="padding: 0 22px; white-space: nowrap">Seminovos com garantia</span><span style="color: #6B6B6B">✦</span>
+
+</div>
+</div>
+
+<section aria-label="Vantagens" class="jn-wrap" style="max-width: 1240px; margin: 0 auto; padding: 28px 24px 0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px">
+<div class="jn-card" style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center; border: 1px solid #E7E5E4">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A6A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 7h11v10H3zM14 10h4l3 3v4h-7"></path><circle cx="7" cy="18" r="1.6"></circle><circle cx="17" cy="18" r="1.6"></circle></svg>
+<div><div style="font-weight: 700; font-size: 15px">Envio para todo o Brasil</div><div style="font-size: 13px; color: #555555">Seu pedido chega onde você estiver</div></div>
+</div>
+<div class="jn-card" style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center; border: 1px solid #E7E5E4">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A6A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>
+<div><div style="font-weight: 700; font-size: 15px">Cartão em até 21x</div><div style="font-size: 13px; color: #555555">Também aceitamos Pix e dinheiro</div></div>
+</div>
+<div class="jn-card" style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center; border: 1px solid #E7E5E4">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A6A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+<div><div style="font-weight: 700; font-size: 15px">6 meses de garantia</div><div style="font-size: 13px; color: #555555">Em todos os aparelhos seminovos</div></div>
+</div>
+<div class="jn-card" style="background: #FFFFFF; border-radius: 16px; padding: 20px; display: flex; gap: 14px; align-items: center; border: 1px solid #E7E5E4">
+<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#8A6A1F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"></rect><path d="M11 18h2"></path></svg>
+<div><div style="font-weight: 700; font-size: 15px">Especialista Apple</div><div style="font-size: 13px; color: #555555">Quem entende te orienta na escolha</div></div>
+</div>
+</div>
+</section>
+
+<section aria-label="Categorias em destaque" class="jn-wrap jn-sec jn-reveal" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 8px">
+<h2 class="jn-h2" style="margin: 0 0 20px; font-family: Montserrat, sans-serif; font-size: 28px; font-weight: 800">Compre por categoria</h2>
+<div class="jn-cats">
+
+<a href="#iphone" class="jn-tile jn-t-gold" style="border-radius: 20px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; color: #141414; overflow: hidden">
+<img class="jn-blend" src="assets/iphone-duo.jpg" alt="" style="width: 100%; max-width: 130px; aspect-ratio: 1; object-fit: contain">
+<span style="font-weight: 700; font-size: 14px; text-align: center">iPhone</span>
+</a>
+
+<a href="#apple" class="jn-tile jn-t-sky" style="border-radius: 20px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; color: #141414; overflow: hidden">
+<img class="jn-blend" src="assets/ipad-11.jpg" alt="" style="width: 100%; max-width: 130px; aspect-ratio: 1; object-fit: contain">
+<span style="font-weight: 700; font-size: 14px; text-align: center">iPad</span>
+</a>
+
+<a href="#apple" class="jn-tile jn-t-rose" style="border-radius: 20px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; color: #141414; overflow: hidden">
+<img class="jn-blend" src="assets/apple-watch-11.jpg" alt="" style="width: 100%; max-width: 130px; aspect-ratio: 1; object-fit: contain">
+<span style="font-weight: 700; font-size: 14px; text-align: center">Apple Watch</span>
+</a>
+
+<a href="#xiaomi" class="jn-tile jn-t-red" style="border-radius: 20px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; color: #141414; overflow: hidden">
+<img class="jn-blend" src="assets/xiaomi-18-pro-max.jpg" alt="" style="width: 100%; max-width: 130px; aspect-ratio: 1; object-fit: contain">
+<span style="font-weight: 700; font-size: 14px; text-align: center">Xiaomi e POCO</span>
+</a>
+
+<a href="#acessorios" class="jn-tile jn-t-steel" style="border-radius: 20px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; color: #141414; overflow: hidden">
+<img class="jn-blend" src="assets/jbl-boombox-4.jpg" alt="" style="width: 100%; max-width: 130px; aspect-ratio: 1; object-fit: contain">
+<span style="font-weight: 700; font-size: 14px; text-align: center">Caixas de som</span>
+</a>
+
+<a href="#perfumes" class="jn-tile jn-t-sand" style="border-radius: 20px; padding: 18px 14px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-decoration: none; color: #141414; overflow: hidden">
+<img class="jn-blend" src="assets/perfume-invictus.jpg" alt="" style="width: 100%; max-width: 130px; aspect-ratio: 1; object-fit: contain">
+<span style="font-weight: 700; font-size: 14px; text-align: center">Perfumes</span>
+</a>
+
+</div>
+</section>
+
+<section aria-label="Destaques da semana" class="jn-wrap jn-sec jn-reveal" style="max-width: 1240px; margin: 0 auto; padding: 40px 24px 0">
+<div class="jn-banners">
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20Xiaomi%2018%20Pro%20Max.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" class="jn-tile jn-banner jn-t-red" style="border-radius: 28px; padding: 36px; min-height: 320px; display: flex; flex-wrap: wrap; align-items: center; gap: 20px; text-decoration: none; color: #141414; overflow: hidden; box-sizing: border-box">
+<div style="flex: 1 1 240px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #8C1D13">Top de linha Xiaomi</span>
+<span style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: clamp(26px, 3.4vw, 40px); line-height: 1.08">Xiaomi 18 Pro Max</span>
+<span style="font-size: 16px; line-height: 1.5; color: #3F3F3F">Câmeras de nível profissional em um visual que ninguém ignora.</span>
+<span style="align-self: flex-start; margin-top: 8px; display: inline-flex; align-items: center; height: 46px; padding: 0 22px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px">Quero o meu</span>
+</div>
+<img class="jn-blend" src="assets/xiaomi-18-pro-max.jpg" alt="Xiaomi 18 Pro Max" style="flex: 1 1 200px; min-width: 0; max-width: 300px; aspect-ratio: 1; object-fit: contain; margin: 0 auto">
+</a>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20JBL%20Boombox%204.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" class="jn-tile jn-banner jn-t-steel" style="border-radius: 28px; padding: 36px; min-height: 320px; display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #141414; overflow: hidden; box-sizing: border-box">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #2F4257">Som de respeito</span>
+<span style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: clamp(24px, 3vw, 32px); line-height: 1.1">JBL Boombox 4</span>
+<img class="jn-blend" src="assets/jbl-boombox-4.jpg" alt="JBL Boombox 4" style="width: 100%; max-width: 300px; aspect-ratio: 1.4; object-fit: contain; margin: auto auto 0">
+</a>
+</div>
+</section>
+
+
+<section id="iphone" class="jn-wrap jn-sec jn-reveal" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-bottom: 20px">
+<div>
+<h2 class="jn-h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 28px; font-weight: 800">iPhone</h2>
+<p style="margin: 6px 0 0; color: #555555; font-size: 15px">O mais desejado do momento, com quem é especialista em Apple.</p>
+</div>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." style="font-weight: 600; font-size: 14px; padding: 12px 0">Não achou o modelo? Pergunte →</a>
+</div>
+<div class="jn-prods">
+
+<article class="jn-card" style="background: #FFFFFF; border-radius: 22px; border: 1px solid #E7E5E4; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+<div class="jn-zoom jn-t-gold" style="position: relative; border-radius: 16px; padding: 18px">
+<span style="position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #E6CD8A; border-radius: 6px; padding: 4px 8px">Lançamento</span>
+<img class="jn-blend" src="assets/iphone-duo.jpg" alt="iPhone Duo" style="display: block; width: 100%; aspect-ratio: 1; object-fit: contain">
+</div>
+<div style="padding: 4px 6px 6px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-size: 12px; color: #6B6B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .06em">Apple</span>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3">iPhone Duo</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #555555; flex: 1">O iPhone que dobra: tela grande para assistir e trabalhar, que fecha e cabe no bolso.</p>
+<span style="font-size: 13px; font-weight: 600; color: #6B4F12">Em até 21x no cartão · Pix · Dinheiro</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20iPhone%20Duo.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+Consultar preço
+</a>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="apple" class="jn-wrap jn-sec jn-reveal" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-bottom: 20px">
+<div>
+<h2 class="jn-h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 28px; font-weight: 800">iPad e Apple Watch</h2>
+<p style="margin: 6px 0 0; color: #555555; font-size: 15px">Complete seu ecossistema Apple.</p>
+</div>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." style="font-weight: 600; font-size: 14px; padding: 12px 0">Não achou o modelo? Pergunte →</a>
+</div>
+<div class="jn-prods">
+
+<article class="jn-card" style="background: #FFFFFF; border-radius: 22px; border: 1px solid #E7E5E4; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+<div class="jn-zoom jn-t-sky" style="position: relative; border-radius: 16px; padding: 18px">
+<span style="position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #E6CD8A; border-radius: 6px; padding: 4px 8px">Apple</span>
+<img class="jn-blend" src="assets/ipad-11.jpg" alt="iPad 11" style="display: block; width: 100%; aspect-ratio: 1; object-fit: contain">
+</div>
+<div style="padding: 4px 6px 6px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-size: 12px; color: #6B6B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .06em">Apple</span>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3">iPad 11</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #555555; flex: 1">Rápido e com tela linda para estudar, trabalhar, desenhar e maratonar séries.</p>
+<span style="font-size: 13px; font-weight: 600; color: #6B4F12">Em até 21x no cartão · Pix · Dinheiro</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20iPad%2011.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+Consultar preço
+</a>
+</div>
+</article>
+
+<article class="jn-card" style="background: #FFFFFF; border-radius: 22px; border: 1px solid #E7E5E4; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+<div class="jn-zoom jn-t-rose" style="position: relative; border-radius: 16px; padding: 18px">
+<span style="position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #E6CD8A; border-radius: 6px; padding: 4px 8px">Novo</span>
+<img class="jn-blend" src="assets/apple-watch-11.jpg" alt="Apple Watch Series 11" style="display: block; width: 100%; aspect-ratio: 1; object-fit: contain">
+</div>
+<div style="padding: 4px 6px 6px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-size: 12px; color: #6B6B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .06em">Apple</span>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3">Apple Watch Series 11</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #555555; flex: 1">Saúde, treinos e notificações no pulso. Caixa ouro rosa de 46 mm com pulseira esportiva.</p>
+<span style="font-size: 13px; font-weight: 600; color: #6B4F12">Em até 21x no cartão · Pix · Dinheiro</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20Apple%20Watch%20Series%2011.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+Consultar preço
+</a>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="xiaomi" class="jn-wrap jn-sec jn-reveal" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-bottom: 20px">
+<div>
+<h2 class="jn-h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 28px; font-weight: 800">Xiaomi e POCO</h2>
+<p style="margin: 6px 0 0; color: #555555; font-size: 15px">Tecnologia de ponta com ótimo custo-benefício.</p>
+</div>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." style="font-weight: 600; font-size: 14px; padding: 12px 0">Não achou o modelo? Pergunte →</a>
+</div>
+<div class="jn-prods">
+
+<article class="jn-card" style="background: #FFFFFF; border-radius: 22px; border: 1px solid #E7E5E4; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+<div class="jn-zoom jn-t-red" style="position: relative; border-radius: 16px; padding: 18px">
+<span style="position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #E6CD8A; border-radius: 6px; padding: 4px 8px">Top de linha</span>
+<img class="jn-blend" src="assets/xiaomi-18-pro-max.jpg" alt="Xiaomi 18 Pro Max" style="display: block; width: 100%; aspect-ratio: 1; object-fit: contain">
+</div>
+<div style="padding: 4px 6px 6px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-size: 12px; color: #6B6B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .06em">Xiaomi</span>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3">Xiaomi 18 Pro Max</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #555555; flex: 1">Câmeras de nível profissional e desempenho de sobra, em um visual que chama atenção.</p>
+<span style="font-size: 13px; font-weight: 600; color: #6B4F12">Em até 21x no cartão · Pix · Dinheiro</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20Xiaomi%2018%20Pro%20Max.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+Consultar preço
+</a>
+</div>
+</article>
+
+<article class="jn-card" style="background: #FFFFFF; border-radius: 22px; border: 1px solid #E7E5E4; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+<div class="jn-zoom jn-t-steel" style="position: relative; border-radius: 16px; padding: 18px">
+<span style="position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #E6CD8A; border-radius: 6px; padding: 4px 8px">Custo-benefício</span>
+<img class="jn-blend" src="assets/poco-x8.jpg" alt="POCO X8" style="display: block; width: 100%; aspect-ratio: 1; object-fit: contain">
+</div>
+<div style="padding: 4px 6px 6px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-size: 12px; color: #6B6B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .06em">POCO</span>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3">POCO X8</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #555555; flex: 1">Potente para jogos e redes sociais, com bateria para o dia inteiro.</p>
+<span style="font-size: 13px; font-weight: 600; color: #6B4F12">Em até 21x no cartão · Pix · Dinheiro</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20POCO%20X8.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+Consultar preço
+</a>
+</div>
+</article>
+
+<article class="jn-card" style="background: #FFFFFF; border-radius: 22px; border: 1px solid #E7E5E4; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+<div class="jn-zoom jn-t-violet" style="position: relative; border-radius: 16px; padding: 18px">
+<span style="position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #E6CD8A; border-radius: 6px; padding: 4px 8px">Tablet</span>
+<img class="jn-blend" src="assets/xiaomi-pad-7-pro.jpg" alt="Xiaomi Pad 7 Pro" style="display: block; width: 100%; aspect-ratio: 1; object-fit: contain">
+</div>
+<div style="padding: 4px 6px 6px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-size: 12px; color: #6B6B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .06em">Xiaomi</span>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3">Xiaomi Pad 7 Pro</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #555555; flex: 1">Tela grande e fluida para produtividade e entretenimento, por um preço justo.</p>
+<span style="font-size: 13px; font-weight: 600; color: #6B4F12">Em até 21x no cartão · Pix · Dinheiro</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20Xiaomi%20Pad%207%20Pro.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+Consultar preço
+</a>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="acessorios" class="jn-wrap jn-sec jn-reveal" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-bottom: 20px">
+<div>
+<h2 class="jn-h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 28px; font-weight: 800">Som e acessórios</h2>
+<p style="margin: 6px 0 0; color: #555555; font-size: 15px">Para levar a festa para qualquer lugar.</p>
+</div>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." style="font-weight: 600; font-size: 14px; padding: 12px 0">Não achou o modelo? Pergunte →</a>
+</div>
+<div class="jn-prods">
+
+<article class="jn-card" style="background: #FFFFFF; border-radius: 22px; border: 1px solid #E7E5E4; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+<div class="jn-zoom jn-t-steel" style="position: relative; border-radius: 16px; padding: 18px">
+<span style="position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #E6CD8A; border-radius: 6px; padding: 4px 8px">Destaque</span>
+<img class="jn-blend" src="assets/jbl-boombox-4.jpg" alt="JBL Boombox 4" style="display: block; width: 100%; aspect-ratio: 1; object-fit: contain">
+</div>
+<div style="padding: 4px 6px 6px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-size: 12px; color: #6B6B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .06em">JBL</span>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3">JBL Boombox 4</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #555555; flex: 1">Som potente, grave forte e bateria de longa duração. Resistente para levar para o rolê.</p>
+<span style="font-size: 13px; font-weight: 600; color: #6B4F12">Em até 21x no cartão · Pix · Dinheiro</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20JBL%20Boombox%204.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+Consultar preço
+</a>
+</div>
+</article>
+
+</div>
+</section>
+
+<section id="perfumes" class="jn-wrap jn-sec jn-reveal" style="max-width: 1240px; margin: 0 auto; padding: 56px 24px 8px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 24px; margin-bottom: 20px">
+<div>
+<h2 class="jn-h2" style="margin: 0; font-family: Montserrat, sans-serif; font-size: 28px; font-weight: 800">Perfumes</h2>
+<p style="margin: 6px 0 0; color: #555555; font-size: 15px">Fragrâncias marcantes para completar o seu estilo.</p>
+</div>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." style="font-weight: 600; font-size: 14px; padding: 12px 0">Não achou o modelo? Pergunte →</a>
+</div>
+<div class="jn-prods">
+
+<article class="jn-card" style="background: #FFFFFF; border-radius: 22px; border: 1px solid #E7E5E4; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+<div class="jn-zoom jn-t-sand" style="position: relative; border-radius: 16px; padding: 18px">
+<span style="position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #E6CD8A; border-radius: 6px; padding: 4px 8px">Masculino</span>
+<img class="jn-blend" src="assets/perfume-invictus.jpg" alt="Invictus Eau de Toilette" style="display: block; width: 100%; aspect-ratio: 1; object-fit: contain">
+</div>
+<div style="padding: 4px 6px 6px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-size: 12px; color: #6B6B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .06em">Paco Rabanne</span>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3">Invictus Eau de Toilette</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #555555; flex: 1">Fresco e intenso, um clássico masculino que nunca sai de moda.</p>
+<span style="font-size: 13px; font-weight: 600; color: #6B4F12">Em até 21x no cartão · Pix · Dinheiro</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20Invictus%20Eau%20de%20Toilette.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+Consultar preço
+</a>
+</div>
+</article>
+
+<article class="jn-card" style="background: #FFFFFF; border-radius: 22px; border: 1px solid #E7E5E4; padding: 14px; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+<div class="jn-zoom jn-t-sand" style="position: relative; border-radius: 16px; padding: 18px">
+<span style="position: absolute; top: 12px; left: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: #141414; color: #E6CD8A; border-radius: 6px; padding: 4px 8px">Árabe</span>
+<img class="jn-blend" src="assets/perfume-hawas-kobra.jpg" alt="Hawas Kobra Eau de Parfum" style="display: block; width: 100%; aspect-ratio: 1; object-fit: contain">
+</div>
+<div style="padding: 4px 6px 6px; display: flex; flex-direction: column; gap: 8px; flex: 1">
+<span style="font-size: 12px; color: #6B6B6B; font-weight: 600; text-transform: uppercase; letter-spacing: .06em">Rasasi</span>
+<h3 style="margin: 0; font-size: 18px; font-weight: 700; line-height: 1.3">Hawas Kobra Eau de Parfum</h3>
+<p style="margin: 0; font-size: 14px; line-height: 1.5; color: #555555; flex: 1">Perfume árabe sofisticado, de presença marcante e ótima fixação.</p>
+<span style="font-size: 13px; font-weight: 600; color: #6B4F12">Em até 21x no cartão · Pix · Dinheiro</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vi%20no%20site%20e%20tenho%20interesse%20no%20Hawas%20Kobra%20Eau%20de%20Parfum.%20Qual%20o%20valor%20e%20a%20disponibilidade%3F" style="display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 12px; background: #0B0B0C; color: #FFFFFF; font-weight: 600; font-size: 14px; text-decoration: none">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#C9A24A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+Consultar preço
+</a>
+</div>
+</article>
+
+</div>
+</section>
+
+
+<section id="seminovos" class="jn-wrap jn-reveal" style="max-width: 1240px; margin: 64px auto 0; padding: 0 24px">
+<div class="jn-semi" style="background: #0B0B0C; color: #FFFFFF; border-radius: 28px; padding: 52px 44px; display: flex; flex-wrap: wrap; gap: 32px; align-items: center; justify-content: space-between">
+<div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #C9A24A">Seminovos JN</span>
+<h2 style="margin: 0; font-family: Montserrat, sans-serif; font-size: 36px; font-weight: 800; line-height: 1.12">Seu iPhone dos sonhos, com <span style="color: #C9A24A">6 meses de garantia.</span></h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.6; color: #CFCFCF">Trabalhamos com aparelhos seminovos selecionados, todos com 6 meses de garantia. Chama no WhatsApp, diga o modelo e a capacidade que você procura e a gente te mostra o que tem disponível hoje.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px">
+<span style="border: 1px solid #5E4712; color: #E6CD8A; border-radius: 999px; padding: 7px 14px; font-size: 13px; font-weight: 600">Garantia de 6 meses</span>
+<span style="border: 1px solid #5E4712; color: #E6CD8A; border-radius: 999px; padding: 7px 14px; font-size: 13px; font-weight: 600">Cartão em até 21x</span>
+<span style="border: 1px solid #5E4712; color: #E6CD8A; border-radius: 999px; padding: 7px 14px; font-size: 13px; font-weight: 600">Pix ou dinheiro</span>
+</div>
+</div>
+<a class="jn-cta" href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Quais%20iPhones%20seminovos%20voc%C3%AAs%20t%C3%AAm%20dispon%C3%ADveis%20hoje%3F" style="display: inline-flex; align-items: center; height: 56px; padding: 0 30px; border-radius: 12px; background: #C9A24A; color: #141414; font-weight: 700; text-decoration: none">Ver seminovos disponíveis</a>
+</div>
+</section>
+
+<section id="loja" class="jn-wrap jn-about jn-reveal" style="max-width: 1240px; margin: 0 auto; padding: 72px 24px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; align-items: center">
+<div style="display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #8A6A1F">Sobre a JN Smartphone</span>
+<h2 style="margin: 0; font-family: Montserrat, sans-serif; font-size: clamp(26px, 3.4vw, 34px); font-weight: 800; line-height: 1.15">Conectamos você ao melhor da tecnologia.</h2>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3F3F3F">A JN Smartphone nasceu em Queimadas de Jurema, Pernambuco, com um propósito simples: realizar o sonho de quem quer ter um iPhone, um Xiaomi ou aquele acessório que faz diferença no dia a dia. Somos especialistas em produtos Apple, trabalhamos com aparelhos novos e seminovos e enviamos para todo o Brasil.</p>
+<p style="margin: 0; font-size: 16px; line-height: 1.7; color: #3F3F3F">Mais de 18 mil pessoas acompanham a loja no Instagram, onde mostramos as novidades, as raridades que chegam e os clientes que já saíram com o aparelho novo na mão.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 4px">
+<a href="https://www.instagram.com/jn_smartphone/" style="display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 12px; background: #141414; color: #FFFFFF; font-weight: 600; text-decoration: none">Seguir @jn_smartphone</a>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." style="display: inline-flex; align-items: center; height: 48px; padding: 0 22px; border-radius: 12px; border: 1px solid #141414; color: #141414; font-weight: 600; text-decoration: none">(87) 98139-0046</a>
+</div>
+</div>
+<div style="background: #0B0B0C; border-radius: 28px; padding: 32px; display: flex; flex-direction: column; align-items: center; gap: 20px">
+<img class="jn-float" src="assets/logo-jn.jpg" alt="Logo JN Smartphone" style="width: 100%; max-width: 300px; border-radius: 16px">
+<div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; width: 100%">
+<div style="border: 1px solid #333335; border-radius: 14px; padding: 14px 8px; text-align: center; color: #FFFFFF"><div style="font-family: Montserrat, sans-serif; font-size: 22px; font-weight: 800; color: #C9A24A">18,9 mil</div><div style="font-size: 12px; color: #CFCFCF">seguidores</div></div>
+<div style="border: 1px solid #333335; border-radius: 14px; padding: 14px 8px; text-align: center; color: #FFFFFF"><div style="font-family: Montserrat, sans-serif; font-size: 22px; font-weight: 800; color: #C9A24A">21x</div><div style="font-size: 12px; color: #CFCFCF">no cartão</div></div>
+<div style="border: 1px solid #333335; border-radius: 14px; padding: 14px 8px; text-align: center; color: #FFFFFF"><div style="font-family: Montserrat, sans-serif; font-size: 22px; font-weight: 800; color: #C9A24A">6 meses</div><div style="font-size: 12px; color: #CFCFCF">de garantia*</div></div>
+</div>
+<span style="font-size: 12px; color: #9A9A9A">*nos aparelhos seminovos</span>
+</div>
+</div>
+</section>
+
+<section aria-label="Perguntas frequentes" class="jn-wrap jn-reveal" style="max-width: 900px; margin: 0 auto; padding: 0 24px 72px">
+<h2 class="jn-h2" style="margin: 0 0 20px; font-family: Montserrat, sans-serif; font-size: 28px; font-weight: 800; text-align: center">Perguntas frequentes</h2>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<details style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 14px; padding: 18px 20px"><summary style="font-weight: 700; cursor: pointer">Quais as formas de pagamento?</summary><p style="margin: 10px 0 0; color: #3F3F3F; line-height: 1.6">Aceitamos Pix, dinheiro ou cartão de crédito em até 21x.</p></details>
+<details style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 14px; padding: 18px 20px"><summary style="font-weight: 700; cursor: pointer">Os seminovos têm garantia?</summary><p style="margin: 10px 0 0; color: #3F3F3F; line-height: 1.6">Sim. Todos os aparelhos seminovos da JN Smartphone saem com 6 meses de garantia.</p></details>
+<details style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 14px; padding: 18px 20px"><summary style="font-weight: 700; cursor: pointer">Vocês enviam para a minha cidade?</summary><p style="margin: 10px 0 0; color: #3F3F3F; line-height: 1.6">Sim. A JN Smartphone envia para todo o Brasil. Fale com a gente no WhatsApp para combinar o frete e o prazo até você.</p></details>
+<details style="background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 14px; padding: 18px 20px"><summary style="font-weight: 700; cursor: pointer">Por que os preços não aparecem no site?</summary><p style="margin: 10px 0 0; color: #3F3F3F; line-height: 1.6">Os valores variam conforme o modelo, a capacidade, a cor e a forma de pagamento. No WhatsApp você recebe o preço atualizado e as condições do dia.</p></details>
+</div>
+</section>
+
+<footer style="background: #0B0B0C; color: #CFCFCF">
+<div class="jn-wrap" style="max-width: 1240px; margin: 0 auto; padding: 48px 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: Montserrat, sans-serif; font-weight: 800; font-size: 18px; color: #FFFFFF">JN SMARTPHONE</span>
+<span style="font-size: 14px; line-height: 1.6">Aqui realizamos sonhos. Especialista em produtos Apple, aparelhos novos e seminovos.</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 14px">
+<span style="font-weight: 700; color: #FFFFFF; margin-bottom: 4px">Produtos</span>
+<a href="#iphone" style="color: #CFCFCF; text-decoration: none; padding: 6px 0">iPhone</a>
+<a href="#apple" style="color: #CFCFCF; text-decoration: none; padding: 6px 0">iPad e Apple Watch</a>
+<a href="#xiaomi" style="color: #CFCFCF; text-decoration: none; padding: 6px 0">Xiaomi e POCO</a>
+<a href="#seminovos" style="color: #CFCFCF; text-decoration: none; padding: 6px 0">Seminovos</a>
+<a href="#perfumes" style="color: #CFCFCF; text-decoration: none; padding: 6px 0">Perfumes</a>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 14px">
+<span style="font-weight: 700; color: #FFFFFF; margin-bottom: 4px">Atendimento</span>
+<a href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." style="color: #CFCFCF; text-decoration: none; padding: 6px 0">WhatsApp (87) 98139-0046</a>
+<a href="https://www.instagram.com/jn_smartphone/" style="color: #CFCFCF; text-decoration: none; padding: 6px 0">Instagram @jn_smartphone</a>
+<span style="padding: 6px 0">Queimadas de Jurema - PE</span>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; font-size: 14px">
+<span style="font-weight: 700; color: #FFFFFF; margin-bottom: 4px">Pagamento</span>
+<span style="padding: 6px 0">Pix</span>
+<span style="padding: 6px 0">Dinheiro</span>
+<span style="padding: 6px 0">Cartão de crédito em até 21x</span>
+</div>
+</div>
+<div style="border-top: 1px solid #222224">
+<div class="jn-wrap" style="max-width: 1240px; margin: 0 auto; padding: 20px 24px 28px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<span style="font-size: 12px; color: #A3A3A3">© 2026 JN Smartphone · Imagens meramente ilustrativas</span>
+<a href="https://www.instagram.com/flowbotics.ia/" style="display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: #CFCFCF; font-size: 13px; min-height: 44px">
+<span>Desenvolvido por <span style="color: #FFFFFF; font-weight: 600">@flowbotics.ia</span></span>
+<span style="background: #FFFFFF; border-radius: 10px; padding: 6px 10px; display: inline-flex"><img src="assets/flowbotics.png" alt="Flowbotics" style="height: 40px; width: auto; display: block"></span>
+</a>
+</div>
+</div>
+</footer>
+
+<a class="jn-fab jn-pulse" href="https://wa.me/5587981390046?text=Ol%C3%A1%2C%20JN%20Smartphone!%20Vim%20pelo%20site%20e%20gostaria%20de%20atendimento." aria-label="Falar no WhatsApp" style="position: fixed; right: 20px; bottom: 20px; width: 60px; height: 60px; border-radius: 50%; background: #C9A24A; display: flex; align-items: center; justify-content: center; z-index: 20">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 0 1-13.4 7.8L3 21l1.3-4.4A9 9 0 1 1 21 12z"></path></svg>
+</a>
+
+</div>
+<script>
+(function(){var s=[].slice.call(document.querySelectorAll('.jn-slide')),d=[].slice.call(document.querySelectorAll('.jn-dot')),i=0,t;
+function go(n){i=n;s.forEach(function(e,k){e.classList.toggle('is-on',k===n)});d.forEach(function(e,k){e.classList.toggle('is-on',k===n)})}
+d.forEach(function(e,k){e.addEventListener('click',function(){clearInterval(t);go(k)})});
+if(!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches))t=setInterval(function(){go((i+1)%s.length)},4200);
+var f=document.getElementById('jn-busca-form');f.addEventListener('submit',function(ev){ev.preventDefault();var q=document.getElementById('busca').value.trim();if(q)window.open('https://wa.me/5587981390046?text='+encodeURIComponent('Olá, JN Smartphone! Estou procurando: '+q),'_blank','noopener')});
+})();
+</script>
+</body>
+</html>
