@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Jardel Costa Nutri · Nutricionista e Personal · Consultoria online</title>
-<meta name="description" content="Treino e alimentação no mesmo acompanhamento. Consultoria online para todo o Brasil e consulta presencial em Lajedo-PE com Jardel Costa, nutricionista (CRN 40144-P) e personal (CREF 5533-G/PE).">
+<meta name="description" content="Nutricionista e personal trainer em Lajedo-PE. Nutrição e treino no mesmo acompanhamento: consulta presencial ou consultoria online para todo o Brasil.">
 <meta property="og:title" content="Jardel Costa Nutri · Treino e alimentação no mesmo acompanhamento">
 <meta property="og:description" content="Consultoria online de nutrição + treino, planos a partir de R$ 99. Saúde depois dos 40.">
-<meta property="og:image" content="https://jardelcostaef-cloud.github.io/assets/og-image.png">
+<meta property="og:image" content="https://www.jardelcostanutri.com.br/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Logotipo Jardel Costa Nutri">
@@ -15,7 +15,7 @@
 <link rel="canonical" href="https://www.jardelcostanutri.com.br/">
 <meta property="og:site_name" content="Jardel Costa Nutri">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://jardelcostaef-cloud.github.io/assets/og-image.png">
+<meta name="twitter:image" content="https://www.jardelcostanutri.com.br/assets/og-image.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" href="assets/jardel-costa-nutri_simbolo_cor.svg" type="image/svg+xml">
@@ -25,29 +25,232 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "MedicalBusiness",
-  "name": "Jardel Costa Nutri",
-  "description": "Consultoria online de nutrição e treino para todo o Brasil e consulta presencial em Lajedo-PE.",
-  "url": "https://www.jardelcostanutri.com.br/",
-  "logo": "https://jardelcostaef-cloud.github.io/assets/og-image.png",
-  "image": "https://jardelcostaef-cloud.github.io/assets/jardel-consultorio.jpg",
-  "telephone": "+55 87 99991-0894",
-  "priceRange": "R$ 99 - R$ 1.490",
-  "medicalSpecialty": "DietNutrition",
-  "areaServed": "BR",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Av. Dezenove de Maio, 390, Centro",
-    "addressLocality": "Lajedo",
-    "addressRegion": "PE",
-    "addressCountry": "BR"
-  },
-  "sameAs": ["https://www.instagram.com/jardelcostanutri/"],
-  "founder": {
-    "@type": "Person",
-    "name": "Jardel Costa",
-    "jobTitle": "Nutricionista (CRN 40144-P) e Profissional de Educação Física (CREF 5533-G/PE)"
-  }
+  "@graph": [
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://www.jardelcostanutri.com.br/#negocio",
+      "name": "Jardel Costa Nutri",
+      "description": "Nutricionista e personal trainer em Lajedo-PE. Nutrição e treino no mesmo acompanhamento, com consulta presencial e consultoria online para todo o Brasil.",
+      "url": "https://www.jardelcostanutri.com.br/",
+      "logo": "https://www.jardelcostanutri.com.br/assets/og-image.png",
+      "image": [
+        "https://www.jardelcostanutri.com.br/assets/jardel-consultorio.jpg",
+        "https://www.jardelcostanutri.com.br/assets/jardel-trabalhando.jpg"
+      ],
+      "telephone": "+55 87 99991-0894",
+      "priceRange": "R$ 99 - R$ 1.490",
+      "medicalSpecialty": "DietNutrition",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Dezenove de Maio, 390 - Centro",
+        "addressLocality": "Lajedo",
+        "addressRegion": "PE",
+        "postalCode": "55385-000",
+        "addressCountry": "BR"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "12:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "14:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "12:00"
+        }
+      ],
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Lajedo"
+        },
+        {
+          "@type": "City",
+          "name": "Garanhuns"
+        },
+        {
+          "@type": "State",
+          "name": "Pernambuco"
+        },
+        {
+          "@type": "Country",
+          "name": "Brasil"
+        }
+      ],
+      "founder": {
+        "@id": "https://www.jardelcostanutri.com.br/#jardel"
+      },
+      "sameAs": [
+        "https://www.instagram.com/jardelcostanutri/",
+        "https://www.tiktok.com/@jardelcostanutri"
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "name": "Consultoria online de nutrição e treino",
+          "price": "99",
+          "priceCurrency": "BRL",
+          "description": "A partir de R$ 99. Planos Digital Essencial e Online com Vídeo."
+        },
+        {
+          "@type": "Offer",
+          "name": "Consulta presencial: nutrição + treino",
+          "price": "350",
+          "priceCurrency": "BRL"
+        },
+        {
+          "@type": "Offer",
+          "name": "Consulta presencial: só nutrição",
+          "price": "250",
+          "priceCurrency": "BRL"
+        },
+        {
+          "@type": "Offer",
+          "name": "Consulta presencial: só treino",
+          "price": "150",
+          "priceCurrency": "BRL"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.jardelcostanutri.com.br/#jardel",
+      "name": "Jardel Costa",
+      "jobTitle": "Nutricionista e Personal Trainer",
+      "url": "https://www.jardelcostanutri.com.br/",
+      "image": "https://www.jardelcostanutri.com.br/assets/jardel-consultorio.jpg",
+      "worksFor": {
+        "@id": "https://www.jardelcostanutri.com.br/#negocio"
+      },
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Registro profissional",
+          "name": "CRN 40144-P"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Registro profissional",
+          "name": "CREF 5533-G/PE"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Pós-graduação",
+          "name": "Nutrição Esportiva"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "credentialCategory": "Pós-graduação",
+          "name": "Fisiologia do Exercício"
+        }
+      ],
+      "knowsAbout": [
+        "Nutrição esportiva",
+        "Emagrecimento",
+        "Hipertrofia",
+        "Musculação",
+        "Saúde depois dos 40",
+        "Fisiologia do exercício"
+      ],
+      "sameAs": [
+        "https://www.instagram.com/jardelcostanutri/",
+        "https://www.tiktok.com/@jardelcostanutri"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.jardelcostanutri.com.br/#site",
+      "url": "https://www.jardelcostanutri.com.br/",
+      "name": "Jardel Costa Nutri",
+      "inLanguage": "pt-BR",
+      "publisher": {
+        "@id": "https://www.jardelcostanutri.com.br/#negocio"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.jardelcostanutri.com.br/#duvidas",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "A consultoria online funciona tão bem quanto a presencial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O planejamento é individualizado do mesmo jeito: alimentação e treino montados por mim, com avaliação profissional, suporte e ajustes. A diferença é que você não precisa se deslocar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual a diferença entre Digital Essencial e Online com Vídeo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Os dois têm nutrição e treino individualizados, app, suporte pelo WhatsApp e ajustes. O Online com Vídeo inclui videoconsultas individuais agendadas: 1 no mensal, 2 no trimestral, 3 no semestral e 4 no anual."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Qual plano você recomenda para começar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "O mensal é uma boa porta de entrada. Para mudanças consistentes de composição corporal e hábitos, o trimestral costuma ser o melhor ponto de partida, porque dá tempo de ajustar o plano à sua resposta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Preciso cortar tudo o que gosto de comer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não. O plano é montado com base nas suas preferências e na sua rotina, inclusive com opções práticas do dia a dia, para ser possível de seguir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Comecei a treinar agora (ou parei há anos). Serve para mim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. O treino é prescrito para o seu nível atual, seu histórico e o que você tem disponível, e evolui junto com você."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como funciona a consulta presencial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "É uma consulta avulsa no consultório em Lajedo-PE, com avaliação presencial e 60 dias de acompanhamento digital. Cada consulta é paga individualmente, sem retorno presencial incluso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como faço para começar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Escolha o plano acima e clique em \"Quero este plano\". Você cai no meu WhatsApp com a mensagem pronta e eu te passo os próximos passos."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 <style>
