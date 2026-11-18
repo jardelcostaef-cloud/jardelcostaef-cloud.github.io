@@ -19,6 +19,11 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <link rel="icon" href="assets/jardel-costa-nutri_simbolo_cor.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" as="script">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" as="script">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js" as="script">
+<script>(function(d){try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('anim');setTimeout(function(){if(!window.gsap){d.classList.remove('anim')}},2500)}}catch(e){}})(document.documentElement)</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -284,6 +289,14 @@ html{scroll-behavior:smooth}
 footer{padding-bottom:64px}
 #plans-grid .plan-featured{order:-1}
 }
+html.lenis,html.lenis body{height:auto}
+html.lenis{scroll-behavior:auto!important}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+.lenis.lenis-stopped{overflow:hidden}
+.lenis.lenis-smooth iframe{pointer-events:none}
+.anim .hero-in{visibility:hidden}
+header{transition:box-shadow .3s ease}
+header.is-scrolled{box-shadow:0 8px 28px rgba(19,41,75,.10)}
 </style>
 </head>
 <body>
@@ -308,25 +321,25 @@ footer{padding-bottom:64px}
 <section id="topo" style="background: #13294B; color: #FFFFFF">
 <div style="max-width: 1200px; margin: 0 auto; padding: clamp(44px, 9vw, 88px) 20px; display: flex; flex-wrap: wrap; align-items: center; gap: clamp(32px, 6vw, 56px)">
 <div style="flex: 1 1 540px; min-width: 0; display: flex; flex-direction: column; gap: 24px">
-<p style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #3FD6C6">Nutricionista e Personal · Saúde depois dos 40</p>
+<p class="hero-in" style="margin: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: #3FD6C6">Nutricionista e Personal · Saúde depois dos 40</p>
 <h1 style="margin: 0; font-size: clamp(36px, 9.5vw, 60px); line-height: 1.04; font-weight: 700; letter-spacing: -0.02em">Treino e alimentação no mesmo acompanhamento. De onde você estiver.</h1>
-<p style="margin: 0; font-size: clamp(17px, 4.6vw, 20px); line-height: 1.55; color: #C9D4E3; max-width: 580px">Consultoria online com planejamento alimentar e treino individualizados, montados por um único profissional habilitado nas duas áreas. Para emagrecer, ganhar força e cuidar da saúde com uma rotina possível.</p>
-<div class="btn-row" style="display: flex; flex-wrap: wrap; gap: 14px; padding-top: 6px">
+<p class="hero-in" style="margin: 0; font-size: clamp(17px, 4.6vw, 20px); line-height: 1.55; color: #C9D4E3; max-width: 580px">Consultoria online com planejamento alimentar e treino individualizados, montados por um único profissional habilitado nas duas áreas. Para emagrecer, ganhar força e cuidar da saúde com uma rotina possível.</p>
+<div class="btn-row hero-in" style="display: flex; flex-wrap: wrap; gap: 14px; padding-top: 6px">
 <a href="#planos" style="background: #3FD6C6; color: #0E1F3A; text-decoration: none; font-weight: 700; font-size: 17px; padding: 16px 28px; border-radius: 999px; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Escolher meu plano online</a>
 <a href="https://wa.me/5587999910894?text=Ol%C3%A1%2C%20Jardel!%20Tenho%20d%C3%BAvidas%20sobre%20a%20consultoria%20online" style="color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 17px; padding: 16px 28px; border-radius: 999px; border: 1.5px solid rgba(255,255,255,0.35); min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Tirar dúvidas no WhatsApp</a>
 </div>
-<p style="margin: 0; font-size: 15px; color: #9FB2CC">Planos a partir de R$ 99 · Nutrição + treino em todos os pacotes</p>
+<p class="hero-in" style="margin: 0; font-size: 15px; color: #9FB2CC">Planos a partir de R$ 99 · Nutrição + treino em todos os pacotes</p>
 </div>
 <div style="flex: 1 1 380px; min-width: 0; display: flex; justify-content: center">
-<img src="assets/jardel-consultorio.jpg" width="1086" height="1448" alt="Jardel Costa, nutricionista e personal, no consultório" style="width: 100%; height: auto; max-width: 440px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 30% 20%; border-radius: 28px; display: block; box-shadow: 0 24px 60px rgba(0,0,0,0.35)">
+<img class="hero-img" src="assets/jardel-consultorio.jpg" width="1086" height="1448" alt="Jardel Costa, nutricionista e personal, no consultório" style="width: 100%; height: auto; max-width: 440px; aspect-ratio: 4 / 5; object-fit: cover; object-position: 30% 20%; border-radius: 28px; display: block; box-shadow: 0 24px 60px rgba(0,0,0,0.35)">
 </div>
 </div>
 <div style="border-top: 1px solid rgba(255,255,255,0.12)">
 <div style="max-width: 1200px; margin: 0 auto; padding: 28px 20px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 24px">
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: clamp(19px, 5vw, 24px); font-weight: 700; color: #3FD6C6">CRN 40144-P</span><span style="font-size: 15px; color: #C9D4E3">Nutricionista</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: clamp(19px, 5vw, 24px); font-weight: 700; color: #3FD6C6">CREF 5533-G/PE</span><span style="font-size: 15px; color: #C9D4E3">Profissional de Educação Física</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: clamp(19px, 5vw, 24px); font-weight: 700; color: #3FD6C6">Desde 2006</span><span style="font-size: 15px; color: #C9D4E3">Trabalhando com treinamento físico</span></div>
-<div style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: clamp(19px, 5vw, 24px); font-weight: 700; color: #3FD6C6">Dono da @acadmeta</span><span style="font-size: 15px; color: #C9D4E3">Prática diária com quem treina</span></div>
+<div class="hero-in" style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: clamp(19px, 5vw, 24px); font-weight: 700; color: #3FD6C6">CRN 40144-P</span><span style="font-size: 15px; color: #C9D4E3">Nutricionista</span></div>
+<div class="hero-in" style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: clamp(19px, 5vw, 24px); font-weight: 700; color: #3FD6C6">CREF 5533-G/PE</span><span style="font-size: 15px; color: #C9D4E3">Profissional de Educação Física</span></div>
+<div class="hero-in" style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: clamp(19px, 5vw, 24px); font-weight: 700; color: #3FD6C6">Desde 2006</span><span style="font-size: 15px; color: #C9D4E3">Trabalhando com treinamento físico</span></div>
+<div class="hero-in" style="display: flex; flex-direction: column; gap: 4px"><span style="font-size: clamp(19px, 5vw, 24px); font-weight: 700; color: #3FD6C6">Dono da @acadmeta</span><span style="font-size: 15px; color: #C9D4E3">Prática diária com quem treina</span></div>
 </div>
 </div>
 </section>
@@ -599,6 +612,7 @@ footer{padding-bottom:64px}
       html+='<a href="https://wa.me/'+WA+'?text='+encodeURIComponent(msg)+'" style="margin-top:auto;text-align:center;text-decoration:none;font-weight:'+(f?700:600)+';font-size:16px;color:'+(f?'#0E1F3A':'#FFFFFF')+';background:'+(f?'#3FD6C6':'#13294B')+';border-radius:999px;padding:14px 20px;min-height:44px;box-sizing:border-box">Quero este plano</a>';
       card.innerHTML=html; grid.appendChild(card);
     });
+    document.dispatchEvent(new Event('planos:render'));
   }
   document.getElementById('btn-essencial').addEventListener('click',function(){render('essencial');});
   document.getElementById('btn-video').addEventListener('click',function(){render('video');});
@@ -609,5 +623,9 @@ footer{padding-bottom:64px}
   }
 })();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.27/dist/lenis.min.js" defer></script>
+<script src="assets/animacoes.js?v=1" defer></script>
 </body>
 </html>
