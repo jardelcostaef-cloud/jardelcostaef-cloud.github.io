@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.jardelcostanutri.com.br/</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-18</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jardelcostanutri.com.br/privacidade/</loc>
+    <lastmod>2026-11-18</lastmod>
   </url>
   <!-- Quando criar novas páginas (ex.: /nutricionista-lajedo/ ou /blog/...), adicione um bloco <url> para cada uma aqui. -->
 </urlset>

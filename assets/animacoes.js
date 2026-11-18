@@ -80,6 +80,7 @@
           stagger: opts.stagger == null ? 0.09 : opts.stagger,
           ease: EASE,
           overwrite: 'auto',
+          clearProps: opts.keepTransform ? '' : 'transform',
           onStart: opts.onStart ? function () { batch.forEach(opts.onStart); } : null
         });
       }
@@ -88,11 +89,40 @@
 
   var sections = gsap.utils.toArray('body section').filter(function (s) { return s.id !== 'topo'; });
 
+  // Títulos de seção: palavras surgem do desfoque (efeito "blur text")
+  function blurWords(h) {
+    var text = h.textContent.replace(/\s+/g, ' ').trim();
+    if (!text || h.children.length) return;
+    h.setAttribute('aria-label', text);
+    h.textContent = '';
+    var words = text.split(' ').map(function (w, i) {
+      if (i) h.appendChild(document.createTextNode(' '));
+      var span = document.createElement('span');
+      span.setAttribute('aria-hidden', 'true');
+      span.style.display = 'inline-block';
+      span.textContent = w;
+      h.appendChild(span);
+      return span;
+    });
+    gsap.set(words, { autoAlpha: 0, y: 14, filter: 'blur(8px)' });
+    ScrollTrigger.create({
+      trigger: h, start: 'top 88%', end: 'max', once: true,
+      onEnter: function () {
+        gsap.to(words, {
+          autoAlpha: 1, y: 0, filter: 'blur(0px)',
+          duration: 0.6, stagger: 0.045, ease: EASE, clearProps: 'filter,transform'
+        });
+      }
+    });
+  }
+
   // Títulos de seção: rótulo, título e texto em sequência
   sections.forEach(function (sec) {
     var h2 = sec.querySelector('h2');
     if (!h2 || sec.querySelector('.cta-box')) return;
-    reveal(h2.parentElement.children, { stagger: 0.08, from: { y: 28 } });
+    blurWords(h2);
+    var rest = [].filter.call(h2.parentElement.children, function (c) { return c !== h2; });
+    reveal(rest, { stagger: 0.08, from: { y: 28 } });
   });
 
   // Grades de cards (objetivos, diferenciais, passos, resultados, depoimentos, presencial)
@@ -106,13 +136,13 @@
 
   // Seletor de planos e notas finais das seções
   reveal(['#planos .tabs', '#type-desc'], { from: { y: 20 } });
-  reveal(gsap.utils.toArray('section > p:last-child, #como-funciona a[href="#planos"]'), { from: { y: 16 } });
+  reveal(gsap.utils.toArray('section > p:last-child, #como-funciona a[href="#planos"], #resultados > a'), { from: { y: 16 } });
 
   // Chamada final
   reveal('.cta-box', { from: { y: 40, scale: 0.96 }, duration: 0.9 });
 
   // Sobre: foto e texto vindo dos lados
-  reveal('#sobre img', { from: { x: -40, y: 0 }, duration: 0.9 });
+  reveal('#sobre img', { from: { x: -40, y: 0 }, duration: 0.9, keepTransform: true });
 
   /* ---------- Contadores dos resultados (−16,5 kg etc.) ---------- */
   gsap.utils.toArray('body section span').forEach(function (span) {
@@ -149,13 +179,13 @@
       once: true,
       onEnter: function () {
         plansSeen = true;
-        gsap.to(plansGrid.children, { autoAlpha: 1, y: 0, duration: 0.75, stagger: 0.09, ease: EASE });
+        gsap.to(plansGrid.children, { autoAlpha: 1, y: 0, duration: 0.75, stagger: 0.09, ease: EASE, clearProps: 'transform' });
       }
     });
     document.addEventListener('planos:render', function () {
       if (plansSeen) {
         gsap.fromTo(plansGrid.children, { autoAlpha: 0, y: 14 },
-          { autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.05, ease: EASE });
+          { autoAlpha: 1, y: 0, duration: 0.45, stagger: 0.05, ease: EASE, clearProps: 'transform' });
       } else {
         gsap.set(plansGrid.children, { autoAlpha: 0, y: 36 });
       }
